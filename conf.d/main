@@ -28,6 +28,10 @@ cat > /etc/drush/drushrc.php << EOF
 \$options['r'] = '$WEBROOT';
 EOF
 
+# install uploadprogress bar
+pecl install uploadprogress
+echo "extension = uploadprogress.so" > /etc/php5/apache2/conf.d/uploadprogress.ini
+
 # download latest drupal7 and install
 drush dl drupal-7 --destination=$(dirname $WEBROOT)
 mv $(dirname $WEBROOT)/drupal-7* $WEBROOT

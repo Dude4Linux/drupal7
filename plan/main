@@ -3,6 +3,9 @@
 
 php-pear            /* used for drush */
 
+php5-dev            /* required by pecl */
+make
+
 php5-gd
 php5-curl           /* dependency of drupal module simpletest */
 php-getid3          /* dependency of drupal module getid3 */
