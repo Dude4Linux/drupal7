@@ -32,6 +32,9 @@ EOF
 pecl install uploadprogress
 echo "extension = uploadprogress.so" > /etc/php5/apache2/conf.d/uploadprogress.ini
 
+# move NameVirtualHost settings to ports.conf
+sed -i -e '/Listen 80/i NameVirtualHost *:80' -e '/Listen 443/i \    NameVirtualHost *:443' /etc/apache2/ports.conf
+
 # download latest drupal7 and install
 drush dl drupal-7 --destination=$(dirname $WEBROOT)
 mv $(dirname $WEBROOT)/drupal-7* $WEBROOT
