@@ -11,3 +11,4 @@ php5-curl           /* dependency of drupal module simpletest */
 php-getid3          /* dependency of drupal module getid3 */
 libssh2-php         /* support inline updates */
 
+libapache2-mod-rpaf /* support X-Forwarded-For headers from frontend proxy */
